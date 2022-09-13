@@ -1,9 +1,12 @@
 * {
   font-family: monospace;
   padding: inherit;
-  border-top-width: inherit;
+  border: 0px;
   margin: 30px;
-  background-color: 0a0c10;
+  background-color: #0a0c10;
+}
+html{
+  margin: 30px;
 }
 h1 {
   font-family: monospace;
@@ -22,16 +25,23 @@ body {
 }
 
 /* Navigation (ALL) */
-* {
+nav {
   color: red;
   text-transform: capitalize;
   text-emphasis: inherit;
   font-family: monospace;
   font-size: 20px;
+  inline-size: max-content;
   padding: inherit;
   border-top-width: inherit;
-  margin: 30px;
   background-color: 0a0c10;
   word-spacing: 110px;
   font-weight: bolder;
 }
+a{
+  color: red;
+}
+a:hover{
+color: #43f70c;
+}
+
