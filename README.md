@@ -8,5 +8,5 @@
 - **_Active Radar_**
 - **_Flood Data (Current)_**
 <br/>
----
-## **_This is a Project for my August 2022 Cohort through @Savvy-Coders_** ##
+
+## **_This is a Project for my August 2022 Cohort through @Savvy-Coders_**
