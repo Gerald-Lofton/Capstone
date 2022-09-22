@@ -1,5 +1,5 @@
 * {
-  font-family: monospace;
+  font-family: 'Inconsolata', monospace;
   padding: inherit;
   border: 0px;
   margin: 30px;
@@ -9,13 +9,15 @@ html{
   margin: 30px;
 }
 h1 {
-  font-family: monospace;
   text-align: center;
   color: #43f70c;
   font-size: 50px;
   font-weight: bolder;
   font-palette: dark;
   text-transform: uppercase;
+}
+p {
+color: red;
 }
 body {
   padding: inherit;
@@ -27,9 +29,9 @@ body {
 /* Navigation (ALL) */
 nav {
   color: red;
+  justify-content: center;
   text-transform: capitalize;
   text-emphasis: inherit;
-  font-family: monospace;
   font-size: 20px;
   inline-size: max-content;
   padding: inherit;
