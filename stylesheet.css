@@ -18,6 +18,9 @@ h1 {
   font-palette: dark;
   text-transform: uppercase;
 }
+h3 {
+  color: #43f70c;
+}
 p {
   color: red;
 }
