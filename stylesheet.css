@@ -1,0 +1,58 @@
+* {
+  font-family: "Inconsolata", monospace;
+  padding: inherit;
+  border: 0px;
+  margin: 30px;
+  background-color: #0a0c10;
+}
+html {
+  margin: 30px;
+}
+h1 {
+  text-align: center;
+  color: #43f70c;
+  text-decoration: underline;
+  text-decoration-color: red;
+  font-size: 50px;
+  font-weight: bolder;
+  font-palette: dark;
+  text-transform: uppercase;
+}
+h3 {
+  color: #43f70c;
+}
+p {
+  color: red;
+}
+body {
+  padding: inherit;
+  border-top-width: inherit;
+  margin: 30px;
+  background-color: 0a0c10;
+}
+
+/* Navigation (ALL) */
+nav {
+  color: red;
+  justify-content: center;
+  text-transform: capitalize;
+  text-emphasis: inherit;
+  font-size: 20px;
+  inline-size: max-content;
+  padding: inherit;
+  border-top-width: inherit;
+  background-color: ;
+  word-spacing: 110px;
+  font-weight: bolder;
+}
+a {
+  color: red;
+}
+a:hover {
+  color: #43f70c;
+}
+
+.hidden--mobile {
+  display: flex;
+  flex-direction: row;
+}
