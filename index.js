@@ -64,7 +64,9 @@ router.hooks({
         // break;
         // case "Pizza":
         //   axios
-        //     .get(`${process.env.PIZZA_PLACE_API_URL}`)
+        //     .get(
+        //  `https://history.openweathermap.org/data/2.5/aggregated/year?lat=35&lon=139&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
+        //)
         //     .then((response) => {
         //       store.Pizza.pizzas = response.data;
         //       done();
