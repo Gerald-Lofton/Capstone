@@ -68,7 +68,7 @@ router.hooks({
         //  `https://history.openweathermap.org/data/2.5/aggregated/year?lat=35&lon=139&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
         //)
         //     .then((response) => {
-        //       store.Pizza.pizzas = response.data;
+        //       store.Flood = response.data;
         //       done();
         //     })
         //     .catch((error) => {

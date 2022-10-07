@@ -9,7 +9,7 @@ const WeatherinputSchema = new mongoose.Schema({
   rain: {
     type: String,
     required: true,
-    enum: ["thin", "chicago", "deep-dish", "hella-thick"],
+    enum: ["Yes", "No"],
   },
   current: {
     type: String,
