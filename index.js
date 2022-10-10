@@ -62,11 +62,13 @@ router.hooks({
             done();
           });
         // break;
-        // case "Pizza":
+        // case "Flood":
         //   axios
-        //     .get(`${process.env.PIZZA_PLACE_API_URL}`)
+        //     .get(
+        //  `https://history.openweathermap.org/data/2.5/history/city?lat=41.85&lon=-87&type=hour&start=1643720400&end=1643806800&units=imperial&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
+        //)
         //     .then((response) => {
-        //       store.Pizza.pizzas = response.data;
+        //       store.Flood = response.data;
         //       done();
         //     })
         //     .catch((error) => {
