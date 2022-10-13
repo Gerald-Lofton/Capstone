@@ -23,7 +23,7 @@ function render(state = store.Home) {
 
 function afterRender(state) {
   // add menu toggle to bars icon in nav bar
-  document.querySelector(".fa-bars").addEventListener("click", () => {
+  document.querySelector(".gg-menu").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
 }
@@ -62,7 +62,7 @@ router.hooks({
             done();
           });
         break;
-      case "Flood":
+      case "Radar":
         axios
           .get(
             `https://history.openweathermap.org/data/2.5/history/city?lat=41.85&lon=-87&type=hour&start=1643720400&end=1643806800&units=imperial&appid=${process.env.OPEN_WEATHER_HISTORY_API_KEY}`
