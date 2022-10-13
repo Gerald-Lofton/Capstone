@@ -1,15 +1,13 @@
 import html from "html-literal";
 
 export default (state) => html`
+  <section></section>
+  <br>
   <section>
-    <div class="floodIframe">
+    <div class="iframe-container">
       <iframe
-        src="https://water.weather.gov/ahps/region_iframe.php?state=MOsscale=true"
-        height="945"
-        width="1125"
-        frameborder="0"
-        scrolling="no"
-      ></iframe>
+        loading="lazy"
+        src=https://water.weather.gov/ahps/region_iframe.php?state=MOsscale=true height="830" width="960" frameborder="0" scrolling="yes"></iframe>
     </div>
   </section>
 `;

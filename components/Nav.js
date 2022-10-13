@@ -2,9 +2,7 @@ import html from "html-literal";
 
 export default (links) => html`
   <nav>
-    <i class="material-symbols-outlined">
-      menu
-    </i>
+    <i class="gg-menu"></i>
     <ul class="hidden--mobile nav-links">
       ${links
         .map(
