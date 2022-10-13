@@ -51,6 +51,7 @@ body {
     font-size: 20px;
   }
   .gg-menu {
+    align-self: center;
     transform: scale(var(--ggs,1)));
 }
 .gg-menu,
