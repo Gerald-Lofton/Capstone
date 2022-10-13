@@ -1,7 +1,7 @@
 import { Header, Nav, Main, Footer } from "./components";
 import * as store from "./store";
 import Navigo from "navigo";
-import { after, capitalize } from "lodash";
+import { after, capitalize, each } from "lodash";
 import axios from "axios";
 import dotenv from "dotenv";
 
@@ -61,20 +61,21 @@ router.hooks({
             console.log(err);
             done();
           });
-        // break;
-        // case "Flood":
-        //   axios
-        //     .get(
-        //  `https://history.openweathermap.org/data/2.5/history/city?lat=41.85&lon=-87&type=hour&start=1643720400&end=1643806800&units=imperial&appid=${process.env.OPEN_WEATHER_MAP_API_KEY}`
-        //)
-        //     .then((response) => {
-        //       store.Flood = response.data;
-        //       done();
-        //     })
-        //     .catch((error) => {
-        //       console.log("It puked", error);
-        //       done();
-        //     });
+        break;
+      case "Flood":
+        axios
+          .get(
+            `https://history.openweathermap.org/data/2.5/history/city?lat=41.85&lon=-87&type=hour&start=1643720400&end=1643806800&units=imperial&appid=${process.env.OPEN_WEATHER_HISTORY_API_KEY}`
+          )
+          .then((response) => {
+            store.Flood.weatherHistory = response.data;
+            console.log(store.Flood.weatherHistory);
+            done();
+          })
+          .catch((error) => {
+            console.log("It puked", error);
+            done();
+          });
         break;
       default:
         done();
