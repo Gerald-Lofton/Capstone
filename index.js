@@ -66,8 +66,10 @@ router.hooks({
         axios
           .get(`${process.env.WEATHER_INPUT_API}`)
           .then((response) => {
-            weatherinput = response.data;
-            console.log(weatherinput);
+            store.Radar.fact = {};
+            store.Radar.fact = response.data;
+            console.log(store.Radar.fact);
+
             done();
           })
           .catch((error) => {
