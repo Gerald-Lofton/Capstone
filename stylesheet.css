@@ -53,6 +53,7 @@ body {
   .gg-menu {
     align-self: center;
     transform: scale(var(--ggs,1)));
+    background: #065c27 !important;
 }
 .gg-menu,
 .gg-menu::after,
@@ -63,7 +64,7 @@ body {
     width: 20px;
     height: 2px;
     border-radius: 3px;
-    background: rgb(6, 92, 39)
+    background: rgb(6, 92, 39) !important;
 }
 .gg-menu::after,
 .gg-menu::before {

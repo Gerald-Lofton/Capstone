@@ -64,12 +64,10 @@ router.hooks({
         break;
       case "Radar":
         axios
-          .get(
-            `https://history.openweathermap.org/data/2.5/history/city?lat=41.85&lon=-87&type=hour&start=1643720400&end=1643806800&units=imperial&appid=${process.env.OPEN_WEATHER_HISTORY_API_KEY}`
-          )
+          .get(`${process.env.WEATHER_INPUT_API}`)
           .then((response) => {
-            store.Flood.weatherHistory = response.data;
-            console.log(store.Flood.weatherHistory);
+            weatherinput = response.data;
+            console.log(weatherinput);
             done();
           })
           .catch((error) => {

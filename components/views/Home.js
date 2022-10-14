@@ -2,7 +2,7 @@ import html from "html-literal";
 
 export default (state) => html`
   <section>
-    <h1>Homework OpenWeatherMap API output:</h1>
+    <h1>Current Weather</h1>
     <div class="current forecast">
       <h3>
         The weather in ${state.weather.city} is ${state.weather.description}.

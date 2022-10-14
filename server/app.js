@@ -22,6 +22,22 @@ const logging = (request, response, next) => {
   next();
 };
 
+// CORS Middleware
+const cors = (req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type, Accept,Authorization,Origin"
+  );
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  next();
+};
+
+app.use(cors);
 app.use(express.json());
 app.use(logging);
 
@@ -38,6 +54,7 @@ app.get("/echo/:input", (request, response) => {
   response.status(418).json({ echo: message });
 });
 
+app.use("/radar", weatherinputs);
 app.use("/flood", weatherinputs);
 
 const PORT = process.env.PORT || 4040; // we use || to provide a default value
