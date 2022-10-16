@@ -1,11 +1,11 @@
 const { Router } = require("express");
-const Weatherinput = require("../models/Weatherinput");
+const Weatherfact = require("../models/Weatherfact");
 const router = Router();
 
 // Create record in MongoDB Atlas using Mongoose.js ORM
 router.post("/", (request, response) => {
-  const newWeatherinput = new Weatherinput(request.body);
-  newWeatherinput.save((error, record) => {
+  const newWeatherfact = new Weatherfact(request.body);
+  newWeatherfact.save((error, record) => {
     if (error) return response.status(500).json(error);
     return response.json(record);
   });
@@ -13,7 +13,7 @@ router.post("/", (request, response) => {
 
 // Get (read) all records from the collection
 router.get("/", (request, response) => {
-  Weatherinput.find({}, (error, record) => {
+  Weatherfact.find({}, (error, record) => {
     if (error) return response.status(500).json(error);
     return response.json(record);
   });
@@ -21,21 +21,21 @@ router.get("/", (request, response) => {
 
 // Get a single record by ID using a query parameter
 router.get("/:id", (request, response) => {
-  Weatherinput.findById(request.params.id, (error, record) => {
+  Weatherfact.findById(request.params.id, (error, record) => {
     if (error) return response.status(500).json(error);
     return response.json(record);
   });
 });
 // Delete all records
 router.delete("/", (request, response) => {
-  Weatherinput.find({}, (error, record) => {
+  Weatherfact.find({}, (error, record) => {
     if (error) return response.status(500).json(error);
     return response.json(record);
   });
 });
 
 router.delete("/:id", (request, response) => {
-  Weatherinput.findByIdAndRemove(request.params.id, {}, (error, record) => {
+  Weatherfact.findByIdAndRemove(request.params.id, {}, (error, record) => {
     if (error) return response.status(500).json(error);
     return response.json(record);
   });
@@ -43,13 +43,12 @@ router.delete("/:id", (request, response) => {
 
 router.put("/:id", (request, response) => {
   const body = request.body;
-  Weatherinput.findByIdAndUpdate(
+  Weatherfact.findByIdAndUpdate(
     request.params.id,
     {
       $set: {
         // Take note that the customer is not included, so it can't
-        customer: body.customer,
-        input: body.input,
+        weatherfact: body.weatherfact,
       },
     },
     {

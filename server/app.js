@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const weatherinputs = require("./routers/weatherinputs");
+const weatherfacts = require("./routers/weatherfacts");
 
 dotenv.config();
 
@@ -56,7 +57,7 @@ app.get("/echo/:input", (request, response) => {
 
 app.use("/radar", weatherinputs);
 app.use("/flood", weatherinputs);
-
+app.use("/fact", weatherfacts);
 const PORT = process.env.PORT || 4040; // we use || to provide a default value
 
 // Tell the Express app to start listening

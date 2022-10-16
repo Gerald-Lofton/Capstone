@@ -15,4 +15,7 @@ export default (state) => html`
       </iframe>
     </div>
   </section>
+  <section>
+    <pre style="color:white"><code>${JSON.stringify(state)}</code></pre>
+  </section>
 `;
