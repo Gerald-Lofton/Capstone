@@ -98,12 +98,11 @@ router.hooks({
         break;
       case "Radar":
         axios
-          .get(`${process.env.WEATHER_INPUT_API}`)
+          .get(`${process.env.WEATHER_FACT_API}`)
           .then((response) => {
-            store.Radar.fact = {};
-            const fact = response.data.weatherfact;
-            console.log(fact);
-
+            console.log(response.data[0].weatherfact);
+            store.Radar.weatherfact.push(response.data[0].weatherfact);
+            console.log(store.Radar.weatherfact[0]);
             done();
           })
           .catch((error) => {
