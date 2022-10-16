@@ -26,6 +26,40 @@ function afterRender(state) {
   document.querySelector(".gg-menu").addEventListener("click", () => {
     document.querySelector("nav > ul").classList.toggle("hidden--mobile");
   });
+  if (state.view === "Flood") {
+    document.querySelector("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const Weatherinput = event.target.elements;
+      console.log("Weatherinput", Weatherinput);
+
+      const Userinput = [];
+      // Interate over the toppings input group elements
+      for (let Userinput of Userinput.input) {
+        // If the value of the checked attribute is true then add the value to the toppings array
+        if (User.checked) {
+          input.push(input.value);
+        }
+      }
+
+      const requestData = {
+        customer: Weatherinput.customer.value,
+        input: Weather.input.value,
+      };
+      console.log("request Body", requestData);
+
+      axios
+        .post(`${process.env.WEATHER_INPUT_API}`, requestData)
+        .then((response) => {
+          // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
+          store.Pizza.Weatherinputs.push(response.data);
+          router.navigate("/Flood");
+        })
+        .catch((error) => {
+          console.log("It puked", error);
+        });
+    });
+  }
 }
 
 router.hooks({
@@ -66,8 +100,10 @@ router.hooks({
         axios
           .get(`${process.env.WEATHER_INPUT_API}`)
           .then((response) => {
-            weatherinput = response.data;
-            console.log(weatherinput);
+            store.Radar.fact = {};
+            const fact = response.data.weatherfact;
+            console.log(fact);
+
             done();
           })
           .catch((error) => {
