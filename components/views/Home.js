@@ -1,7 +1,7 @@
 import html from "html-literal";
 
 export default (state) => html`
-  <section>
+  <section id="main page">
     <h1>Current Weather</h1>
     <div class="current forecast">
       <h3>
@@ -12,6 +12,8 @@ export default (state) => html`
     </div>
   </section>
   <section>
-    <div class="Media feed"></div>
+    <div class="boxempty">
+      <h3>Coming Soon</h3>
+    </div>
   </section>
 `;
