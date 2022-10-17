@@ -30,7 +30,7 @@ export default (state) => html`
           type="text"
           name="comment"
           id="comment"
-          placeholder="Enter Comment or Question"
+          placeholder="Comment/Question"
           required
         />
       </div>
