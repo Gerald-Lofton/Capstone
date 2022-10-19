@@ -12,6 +12,13 @@ export default (state) => html`
     </div>
   </section>
   <section>
+    <form class="search">
+      <input id="search" type="text" class="input" placeholder="search..." />
+      <input type="submit" id="searchbtn" class="search-results">Search</input>
+    </form>
+  </section>
+  <br />
+  <section>
     <div class="boxempty">
       <h3>Coming Soon</h3>
     </div>

@@ -51,7 +51,21 @@ function afterRender(state) {
         });
     });
   }
+  if (state.view === "Home") {
+    document.querySelector("form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      console.log(event.target.elements.search.value);
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=${event.target.elements.search.value}`
+        )
+        .then((response) => {
+          console.log(response.data);
+        });
+    });
+  }
 }
+//NEED AN ALREADY HOOK
 
 router.hooks({
   before: (done, params) => {

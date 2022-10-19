@@ -71,6 +71,11 @@ form > div {
   justify-content: center;
 }
 
+#root > section:nth-child(6){
+  display: flex;
+  justify-content: space-around;
+}
+
 div .boxempty {
   display: flex;
   justify-self: center;
