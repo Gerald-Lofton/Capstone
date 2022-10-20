@@ -52,7 +52,7 @@ function afterRender(state) {
     });
   }
   if (state.view === "Home") {
-    document.querySelector("form").addEventListener("submit", (event) => {
+    document.querySelector("form").addEventListener("submit", async (event) => {
       event.preventDefault();
       console.log(event.target.elements.search.value);
       axios
@@ -60,11 +60,23 @@ function afterRender(state) {
           `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=${event.target.elements.search.value}`
         )
         .then((response) => {
+          const kelvinToFahrenheit = (kelvinTemp) =>
+            Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+
+          store.Home.weather = {};
+          store.Home.weather.city = response.data.name;
+          store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
+          store.Home.weather.feelsLike = kelvinToFahrenheit(
+            response.data.main.feels_like
+          );
+          store.Home.weather.description = response.data.weather[0].main;
           console.log(response.data);
+          router.navigate("/Home");
         });
     });
   }
 }
+
 //NEED AN ALREADY HOOK
 
 router.hooks({
@@ -123,6 +135,14 @@ router.hooks({
       default:
         done();
     }
+  },
+  already: (params) => {
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
+
+    render(store[view]);
   },
 });
 
