@@ -78,6 +78,7 @@ input#search {
 
 #commentSubmission {
   background-color: rgba(10, 10, 10, 0.753);
+  padding: 1em;
 }
 
 form > h2 {
@@ -97,10 +98,6 @@ label {
 
 [type=button], [type=reset], [type=submit], button {
   margin: 1rem
-}
-
-form.search {
-
 }
 
 #root > section:nth-child(4) {
