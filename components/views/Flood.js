@@ -11,7 +11,7 @@ export default (state) => html`
     </div>
   </section>
   <br>
-  <section id="commentSubmission">
+  <section id="formcomment">
     <form id="commentSubmission" method="POST" action="">
       <h2>Got a question or comment?</h2>
       <div>
@@ -30,7 +30,7 @@ export default (state) => html`
           type="text"
           name="comment"
           id="comment"
-          placeholder="Comment/Question"
+          placeholder="Question/Comment"
           required
         />
       </div>

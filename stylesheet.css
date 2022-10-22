@@ -2,28 +2,45 @@
   font-family: "Inconsolata", monospace;
 }
 html {
+  margin: auto:
 }
+
+header {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  align-items: center;
+}
+
+header > h1 {
+  display: flex;
+  letter-spacing: .5em;
+}
+
 h1 {
   justify-content: center;
   text-align: center;
-  color: #43f70c;
-  text-decoration: underline;
-  text-decoration-color: red;
-  font-size: 50px;
+  color: #f0f7eebd;
+  font-stretch: ultra-expanded;
+  font-size: 2em;
   font-weight: bolder;
   text-transform: uppercase;
+  letter-spacing: 1rem;
+
 }
 h3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: #43f70c;
+  color: #f0f7eebd;
 }
 
 p {
   display: flex;
   justify-content: center;
-  color: #43f70c;
+  padding: 5em;
+  font-size: larger;
+  color: #f0f7eebd;
 }
 
 body {
@@ -34,16 +51,17 @@ body {
   ); */
   background-image: url(https://media.tenor.com/fQT87D-F3X0AAAAd/tenor.gif);
   background-size: cover;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px);
   min-height: 100vh;
   margin: 0;
   padding: 1em;
 }
 
-#commentSubmission {
+#formcomment {
   display: flex;
   justify-content: space-around;
   justify-items: center;
+  padding: 1em;
 }
 
 form {
@@ -51,15 +69,38 @@ form {
   flex-direction: column;
   align-items: center;
   width:max-content;
+  border-radius: 25px;
+}
+
+input#search {
+  border-radius: 10px;
+}
+
+#commentSubmission {
+  background-color: rgba(10, 10, 10, 0.753);
 }
 
 form > h2 {
   justify-self: center;
+  color: #f0f7eebd;
 }
 
 form > div {
   display: contents;
   align-items: center;
+}
+
+label {
+  color:#f0f7eebd;
+  padding: 5px;
+}
+
+[type=button], [type=reset], [type=submit], button {
+  margin: 1rem
+}
+
+form.search {
+
 }
 
 #root > section:nth-child(4) {
@@ -73,11 +114,9 @@ form > div {
 }
 
 div .boxempty {
-  display: flex;
-  justify-items: center;
+  display: grid;
   width: 500px;
     height: 500px;
-    border: 1px solid black;
     border-radius: 15px;
     background: transparent;
     background: #000;
@@ -85,24 +124,8 @@ div .boxempty {
 }
 
 div .boxempty > h2 {
-  color: rgb(249, 249, 249);
-  display: flex;
+  flex-direction: column;
   justify-content: center;
-}
-
-div .boxempty > h3 {
-  margin: auto;
-  padding: 100px;
-  justify-content: center;
-  flex-wrap: nowrap;
-  contain: content;
-  color: dimgray;
-  letter-spacing: 5px;
-  flex-wrap: wrap;
-  -webkit-transform: rotate(30deg);
--moz-transform: rotate(30deg);
--o-transform: rotate(30deg);
-writing-mode: lr-tb;
 }
 /* Navigation (ALL) */
 
@@ -159,9 +182,20 @@ writing-mode: lr-tb;
     padding: 0.5rem;
     list-style-type: none;
   }
+
+  nav > ul > li > a {
+    text-transform: capitalize;
+    color: #f0f7eebd;
+  }
+
+  nav > ul > li > a:hover {
+    color: white;
+  }
+
   #root > section:nth-child(4) > div {
 display: flex;
   }
+
   .iframe-container {
     position: relative;
     overflow: hidden;
@@ -188,23 +222,33 @@ display: flex;
     display: flex;
     justify-content: space-evenly;
     padding: 0 0;
+    padding-inline: 5em;
   }
 
   nav > ul > li {
-    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     text-decoration: none;
     border: 1px solid;
+    background-color: rgb(6, 92, 39);
+    border-spacing: 10px;
     padding: 0.5rem 0.5rem;
     border-radius: 25px;
     border-color: rgb(6, 92, 39);
+    letter-spacing: 2px;
+    width: 33.33%
   }
 
 a {
-  color: red;
+  display: flex;
+  justify-content: space-evenly;
+  color: #f0f7eebd;
   text-decoration: none;
+  width: 33.33%;
 }
 a:hover {
-  color: #43f70c;
+  color: white;
 }
 
 .iframe-container {

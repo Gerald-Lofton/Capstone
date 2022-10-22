@@ -20,7 +20,9 @@ export default (state) => html`
   <br />
   <section>
     <div class="boxempty">
-      <h2>5 Day Forecast</h2>
+    <div class="headerboxempty">
+      <h1>5 Day Forecast</h1>
+    </div>
       <h3>Coming Soon</h3>
     </div>
   </section>
