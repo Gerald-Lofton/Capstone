@@ -14,12 +14,13 @@ export default (state) => html`
   <section>
     <form class="search">
       <input id="search" type="text" class="input" placeholder="search..." />
-      <input type="submit" id="searchbtn" class="search-results">Search</input>
+      <input type="submit" id="searchbtn" class="search-results"></input>
     </form>
   </section>
   <br />
   <section>
     <div class="boxempty">
+      <h2>5 Day Forecast</h2>
       <h3>Coming Soon</h3>
     </div>
   </section>

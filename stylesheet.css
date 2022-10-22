@@ -27,11 +27,14 @@ p {
 }
 
 body {
-  background: linear-gradient(
+  /* background: linear-gradient(
     176deg,
     rgb(18, 24, 27) 50%,
     rgb(32, 39, 55) 100%
-  );
+  ); */
+  background-image: url(https://media.tenor.com/fQT87D-F3X0AAAAd/tenor.gif);
+  background-size: cover;
+  backdrop-filter: blur(6px);
   min-height: 100vh;
   margin: 0;
   padding: 1em;
@@ -47,14 +50,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #555151;
-  color: lime;
   width:max-content;
-    border: 1px solid black;
-    border-radius: 15px;
-    background: transparent;
-    background: #000;
-    opacity: 50%;
 }
 
 form > h2 {
@@ -78,7 +74,7 @@ form > div {
 
 div .boxempty {
   display: flex;
-  justify-self: center;
+  justify-items: center;
   width: 500px;
     height: 500px;
     border: 1px solid black;
@@ -86,6 +82,12 @@ div .boxempty {
     background: transparent;
     background: #000;
     opacity: 50%;
+}
+
+div .boxempty > h2 {
+  color: rgb(249, 249, 249);
+  display: flex;
+  justify-content: center;
 }
 
 div .boxempty > h3 {
