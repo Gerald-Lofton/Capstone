@@ -1,7 +1,9 @@
 import html from "html-literal";
 
 export default (state) => html`
-  <section></section>
+  <section>
+    <p>${state.weatherfact}</p>
+  </section>
   <br />
   <section>
     <div class="RadariFrame">
@@ -14,8 +16,5 @@ export default (state) => html`
       >
       </iframe>
     </div>
-  </section>
-  <section>
-    <pre style="color:white"><code>${JSON.stringify(state)}</code></pre>
   </section>
 `;
