@@ -6,12 +6,12 @@ export default (state) => html`
   <section>
     <div class="iframe-container">
       <iframe
-        loading="lazy"
+        loading="eager"
         src=https://water.weather.gov/ahps/region_iframe.php?state=MOsscale=true height="830" width="960" frameborder="0" scrolling="yes"></iframe>
     </div>
   </section>
   <br>
-  <section id="commentSubmission">
+  <section id="formcomment">
     <form id="commentSubmission" method="POST" action="">
       <h2>Got a question or comment?</h2>
       <div>
@@ -30,7 +30,7 @@ export default (state) => html`
           type="text"
           name="comment"
           id="comment"
-          placeholder="Enter Comment or Question"
+          placeholder="Question/Comment"
           required
         />
       </div>

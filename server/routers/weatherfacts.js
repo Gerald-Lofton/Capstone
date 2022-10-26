@@ -47,7 +47,6 @@ router.put("/:id", (request, response) => {
     request.params.id,
     {
       $set: {
-        // Take note that the customer is not included, so it can't
         weatherfact: body.weatherfact,
       },
     },

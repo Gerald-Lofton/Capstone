@@ -33,18 +33,9 @@ function afterRender(state) {
       const Weatherinput = event.target.elements;
       console.log("Weatherinput", Weatherinput);
 
-      const Userinput = [];
-      // Interate over the toppings input group elements
-      for (let Userinput of Userinput.input) {
-        // If the value of the checked attribute is true then add the value to the toppings array
-        if (User.checked) {
-          input.push(input.value);
-        }
-      }
-
       const requestData = {
-        customer: Weatherinput.customer.value,
-        input: Weather.input.value,
+        customer: Weatherinput.name.value,
+        input: Weatherinput.comment.value,
       };
       console.log("request Body", requestData);
 
@@ -52,7 +43,7 @@ function afterRender(state) {
         .post(`${process.env.WEATHER_INPUT_API}`, requestData)
         .then((response) => {
           // Push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-          store.Pizza.Weatherinputs.push(response.data);
+          // store.Flood.Weatherinputs.push(response.data);
           router.navigate("/Flood");
         })
         .catch((error) => {
@@ -60,7 +51,33 @@ function afterRender(state) {
         });
     });
   }
+  if (state.view === "Home") {
+    document.querySelector("form").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      console.log(event.target.elements.search.value);
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=${event.target.elements.search.value}`
+        )
+        .then((response) => {
+          const kelvinToFahrenheit = (kelvinTemp) =>
+            Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
+
+          store.Home.weather = {};
+          store.Home.weather.city = response.data.name;
+          store.Home.weather.temp = kelvinToFahrenheit(response.data.main.temp);
+          store.Home.weather.feelsLike = kelvinToFahrenheit(
+            response.data.main.feels_like
+          );
+          store.Home.weather.description = response.data.weather[0].main;
+          console.log(response.data);
+          router.navigate("/Home");
+        });
+    });
+  }
 }
+
+//NEED AN ALREADY HOOK
 
 router.hooks({
   before: (done, params) => {
@@ -100,8 +117,13 @@ router.hooks({
         axios
           .get(`${process.env.WEATHER_FACT_API}`)
           .then((response) => {
-            console.log(response.data[0].weatherfact);
-            store.Radar.weatherfact.push(response.data[0].weatherfact);
+            // Function that gets random number with max being length of array
+            function randomFact(max) {
+              return Math.floor(Math.random() * max);
+            }
+            let x = randomFact(response.data.length);
+            store.Radar.weatherfact = [];
+            store.Radar.weatherfact.push(response.data[x].weatherfact);
             console.log(store.Radar.weatherfact[0]);
             done();
           })
@@ -113,6 +135,14 @@ router.hooks({
       default:
         done();
     }
+  },
+  already: (params) => {
+    const view =
+      params && params.data && params.data.view
+        ? capitalize(params.data.view)
+        : "Home";
+
+    render(store[view]);
   },
 });
 

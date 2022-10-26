@@ -1,7 +1,7 @@
 import html from "html-literal";
 
 export default (state) => html`
-  <section>
+  <section id="main page">
     <h1>Current Weather</h1>
     <div class="current forecast">
       <h3>
@@ -12,6 +12,18 @@ export default (state) => html`
     </div>
   </section>
   <section>
-    <div class="Media feed"></div>
+    <form class="search">
+      <input id="search" type="text" class="input" placeholder="search..." />
+      <input type="submit" id="searchbtn" class="search-results"></input>
+    </form>
+  </section>
+  <br />
+  <section>
+    <div class="boxempty">
+    <div class="headerboxempty">
+      <h1>5 Day Forecast</h1>
+    </div>
+      <h3>Coming Soon</h3>
+    </div>
   </section>
 `;
