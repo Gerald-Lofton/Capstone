@@ -70,6 +70,7 @@ form {
   align-items: center;
   width:max-content;
   border-radius: 25px;
+  padding: 2em;
 }
 
 input#search {
@@ -89,6 +90,14 @@ form > h2 {
 form > div {
   display: contents;
   align-items: center;
+}
+
+section#main\ page {
+  padding-top: 1.5em;
+  background: black;
+  border-radius: 25px;
+  overflow: auto;
+  opacity: .5;
 }
 
 label {
@@ -133,6 +142,7 @@ div .boxempty > h2 {
 
   nav {
     display: flex;
+    padding: 1.5em;
     justify-items: center;
     flex-direction: column;
     text-transform: capitalize;
