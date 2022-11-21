@@ -136,6 +136,11 @@ div .boxempty > h2 {
 /* Navigation (ALL) */
 
 @media (max-width: 549px){
+
+  #root > header > h1 {
+    font-size: 1.5em;
+  }
+
   .hidden--mobile {
     display: none !important;
   }
