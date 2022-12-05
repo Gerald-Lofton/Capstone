@@ -51,8 +51,8 @@ body {
   ); */
   background-image: url(https://media.tenor.com/fQT87D-F3X0AAAAd/tenor.gif);
   background-size: cover;
-  backdrop-filter: blur(10px);
   min-height: 100vh;
+  backdrop-filter: blur(10px);
   margin: 0;
   padding: 1em;
 }
